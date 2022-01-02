@@ -13,15 +13,15 @@ For this project, we will be using data from the [Waymo Open dataset](https://wa
 The data you will use for training, validation and testing is organized as follow:
 ```
 /home/workspace/data/waymo
-    - training_and_validation - contains 97 files to train and validate your models
+	- training_and_validation - contains 97 files to train and validate your models
     - train: contain the train data (empty to start)
     - val: contain the val data (empty to start)
     - test - contains 3 files to test your model and create inference videos
 ```
-
 The `training_and_validation` folder contains file that have been downsampled: we have selected one every 10 frames from 10 fps videos. The `testing` folder contains frames from the 10 fps video without downsampling.
-
+```
 You will split this `training_and_validation` data into `train`, and `val` sets by completing and executing the `create_splits.py` file.
+
 
 ### Experiments
 The experiments folder will be organized as follow:
@@ -79,7 +79,7 @@ In the class, we talked about cross-validation and the importance of creating me
 
 Use the following command to run the script once your function is implemented:
 ```
-python create_splits.py --data-dir /home/workspace/data
+python create_splits.py --data-dir /home/workspace/data/waymo/training_and_validation
 ```
 
 ### Edit the config file
@@ -141,7 +141,10 @@ python inference_video.py --labelmap_path label_map.pbtxt --model_path experimen
 ## Submission Template
 
 ### Project overview
-This section should contain a brief description of the project and what we are trying to achieve. Why is object detection such an important component of self driving car systems?
+This project goal is to train and evaluate an object detection pre-treined model. It consists of three different steps:
+- data exploratory analysis: which consists of first insights on the data, and also some conclusion on how to split the training, validation and tests sets.
+- data split script: which is a python script which will take the data and split into three groups (training, validation and testing) using the conclusions from previous step
+- training and validation part: which shows many different experiments to try to improve the performance of the model in the testing set. The first experiment is used as a reference, and subsequent ones different approaches to try to improve the reference performance.
 
 ### Set up
 This section should contain a brief description of the steps to follow to run the code for this repository.
