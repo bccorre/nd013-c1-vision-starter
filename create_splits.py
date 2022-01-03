@@ -31,7 +31,14 @@ def split(data_dir):
     os.mkdir(train_path)
     os.mkdir(val_path)
     os.mkdir(test_path)
-    record_list = glob(data_dir+"*.tfrecord")
+    record_files = glob(data_dir+"*.tfrecord")
+    # read list of selected files
+    sel_files = open("selected_files.txt","r")
+    # get the list of files not in the selected list
+    record_list = []
+    for r_file in record_files:
+        if r_file not in sel_files:
+            record_list.append(r_file)
     n_records = len(record_list)
     random.shuffle(record_list)
     n_train = 0
@@ -51,6 +58,23 @@ def split(data_dir):
             # add to test folder
             os.symlink(element, test_path + "/" + filename)
             n_test += 1
+    # split the seledted files into all sets
+    sel_files_sz = len(list(sel_files))
+    for idx, element in enumerate(sel_files):
+        filename = element.split("/")[-1]
+        if idx // np.ceil(0.75 * sel_files_sz) == 0:
+            # add to training folder
+            os.symlink(element, train_path + "/" + filename)
+            n_train += 1
+        elif idx // np.ceil(0.90 * sel_files_sz) == 0:
+            # add to validation folder
+            os.symlink(element, val_path + "/" + filename)
+            n_val += 1
+        else:
+            # add to test folder
+            os.symlink(element, test_path + "/" + filename)
+            n_test += 1
+        
     print(n_train,n_val,n_test)
         
 
