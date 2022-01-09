@@ -170,7 +170,7 @@ Also, the configuration file for training is the one generated base on ./pipelin
 
 After training and evaluation, the results are as follows:
 
-![alt Reference results](./experiments/reference/ref_results.png "tensor flow board with training and eval losses")
+![alt Reference results](experiments/reference/ref_results.png "tensor flow board with training and eval losses")
 
 
 #### Improve on the reference
