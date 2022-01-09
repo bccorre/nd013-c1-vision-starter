@@ -148,16 +148,30 @@ This project goal is to train and evaluate an object detection pre-treined model
 
 ### Set up
 This section should contain a brief description of the steps to follow to run the code for this repository.
+For this project, we will be using data from the [Waymo Open dataset](https://waymo.com/open/).
+
+[OPTIONAL] - The files can be downloaded directly from the website as tar files or from the [Google Cloud Bucket](https://console.cloud.google.com/storage/browser/waymo_open_dataset_v_1_2_0_individual_files/) as individual tf records.
 
 ### Dataset
 #### Dataset analysis
-This section should contain a quantitative and qualitative description of the dataset. It should include images, charts and other visualizations.
+This section should contain a quantitative and qualitative description of the dataset. It should include images, charts and other visualizations. 
 #### Cross validation
 This section should detail the cross validation strategy and justify your approach.
 
 ### Training
 #### Reference experiment
-This section should detail the results of the reference experiment. It should includes training metrics and a detailed explanation of the algorithm's performances.
+This experiment the model from the link below is used:
+
+http://download.tensorflow.org/models/object_detection/tf2/20200711/ssd_resnet50_v1_fpn_640x640_coco17_tpu-8.tar.gz 
+
+The training, eval, and test datasets are left as is. 
+
+Also, the configuration file for training is the one generated base on ./pipeline.config and placed at ./experiments/reference.
+
+After training and evaluation, the results are as follows:
+
+![alt Reference results](./experiments/reference/ref_results.png "tensor flow board with training and eval losses")
+
 
 #### Improve on the reference
 This section should highlight the different strategies you adopted to improve your model. It should contain relevant figures and details of your findings.
