@@ -189,6 +189,8 @@ Adding the following augmentations to the configuration file:
 ```
 ![alt Experiment 1 results](experiments/experiment_01/exp_01_res.png "tensor flow board with training and eval losses")
 ```
-Given the results above, the local minima stagnation is more pronounced.
+Given the results above, the local minima stagnation is more pronounced. The model seems to be in better minima and jump to a new one twice.
+
+Although, it does converge to losses values better than the reference. For the training set it reaches 5.94, and to the evaluation set it reaches 5.94. This show that the split are good enough.
 
 This means that a new optimizer with a new learning rate decay strategy would improve the convergency.
