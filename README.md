@@ -169,9 +169,9 @@ The training, eval, and test datasets are left as is.
 Also, the configuration file for training is the one generated base on ./pipeline.config and placed at ./experiments/reference.
 
 After training and evaluation, the results are as follows:
-
+```
 ![alt Reference results](experiments/reference/ref_results.png "tensor flow board with training and eval losses")
-
+```
 
 #### Improve on the reference
 This section should highlight the different strategies you adopted to improve your model. It should contain relevant figures and details of your findings.
