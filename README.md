@@ -186,9 +186,9 @@ Adding the following augmentations to the configuration file:
 - random_rgb_to_gray: this could be useful to not rely on colored images in order to detect object, especially in cases where only a few color dominate the training set.
 - random_adjust_brightness: to introduce more images by changing the brightness.
 - random_square_crop_by_scale: to crop the existing images and try to zoom in to identify small objects, and also less objects per image, increasing accuracy of the model.
-
+```
 ![alt Experiment 1 results](experiments/experiment_01/exp_01_res.png "tensor flow board with training and eval losses")
-
+```
 Given the results above, the local minima stagnation is more pronounced.
 
 This means that a new optimizer with a new learning rate decay strategy would improve the convergency.
