@@ -179,4 +179,13 @@ One of the reasons is that the learning rate reaches zero after 2400 generations
 Another reason is that the training set need to be increased, this would help to improve the diversity of images which will change the local minimas, and makes the model reach the global minima and not overfit.
 
 #### Improve on the reference
-This section should highlight the different strategies you adopted to improve your model. It should contain relevant figures and details of your findings.
+#####Experiment 01
+
+Adding the following augmentations to the configuration file:
+
+- random_rgb_to_gray: this could be useful to not rely on colored images in order to detect object, especially in cases where only a few color dominate the training set.
+- random_adjust_brightness: to introduce more images by changing the brightness.
+- random_square_crop_by_scale: to crop the existing images and try to zoom in to identify small objects, and also less objects per image, increasing accuracy of the model.
+
+![alt Experiment 1 results](experiments/experiment_01/Screenshot 2022-01-09 at 21.57.37.png "tensor flow board with training and eval losses")
+
