@@ -172,6 +172,12 @@ After training and evaluation, the results are as follows:
 ```
 ![alt Reference results](experiments/reference/ref_results.png "tensor flow board with training and eval losses")
 ```
+The results show that the model converges to a local minima, and reaches loss values of 8.9 in the evaluation set and 8.942 in the training set. 
 
+One of the reasons is that the learning rate reaches zero after 2400 generations, not allowing the optimization get out of local minima. 
+
+Another reason is that the training set need to be increased, this would help to improve the diversity of images which will change the local minimas, and makes the model reach the global minima and not overfit.
+
+This can be the case that 
 #### Improve on the reference
 This section should highlight the different strategies you adopted to improve your model. It should contain relevant figures and details of your findings.
