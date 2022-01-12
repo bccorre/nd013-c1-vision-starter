@@ -65,9 +65,9 @@ The training, eval, and test datasets are left as is.
 Also, the configuration file for training is the one generated base on ./pipeline.config and placed at ./experiments/reference.
 
 After training and evaluation, the results are as follows:
-```
+
 ![alt Reference results](experiments/reference/ref_results.png "tensor flow board with training and eval losses")
-```
+
 The results show that the model converges to a local minima, and reaches loss values of 8.9 in the evaluation set and 8.942 in the training set. 
 
 One of the reasons is that the learning rate reaches zero after 2400 generations, not allowing the optimization get out of local minima. 
@@ -82,9 +82,9 @@ Adding the following augmentations to the configuration file:
 - random_rgb_to_gray: this could be useful to not rely on colored images in order to detect object, especially in cases where only a few color dominate the training set.
 - random_adjust_brightness: to introduce more images by changing the brightness.
 - random_square_crop_by_scale: to crop the existing images and try to zoom in to identify small objects, and also less objects per image, increasing accuracy of the model.
-```
+
 ![alt Experiment 1 results](experiments/experiment_01/exp_01_res.png "tensor flow board with training and eval losses")
-```
+
 Given the results above, the local minima stagnation is more pronounced. The model seems to be in better minima and jump to a new one twice.
 
 Although, it does converge to losses values better than the reference. For the training set it reaches 5.94, and to the evaluation set it reaches 5.94. This show that the split are good enough.
@@ -97,11 +97,11 @@ In this experiment the learning rate decay strategy is changed to exponential de
 
 Also the Adam optimizer is chosen in order to experiment and see if other methods can generalize more.
 
-```
+
 ![alt Experiment 2 results](experiments/experiment_02/exp2_res_loss.png "tensor flow board with training and eval losses")
 
 ![alt Experiment 2 results Learning rate](experiments/experiment_02/exp2_res_learning_rate.png "tensor flow board with learning rate over time")
-```
+
 
 In this experiment the training and eval losses are aroun 0.9, less than experiment 1, giving better results than previous experiment.
 
